@@ -39,4 +39,4 @@ jobs:
 
     # Step 7: Push the Docker image to Docker Hub
     - name: Push Docker image
-      run: docker push mzhj19/cicdtest:$(date +%s)
+      run: docker push mzhj19/cicdtest1:$(date +%s)
