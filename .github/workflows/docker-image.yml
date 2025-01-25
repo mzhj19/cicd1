@@ -21,10 +21,14 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Step 3: Build the project with Gradle
+    # Step 3: Grant execute permissions to Gradle wrapper
+    - name: Grant execute permissions to Gradle wrapper
+      run: chmod +x ./gradlew
+
+    # Step 4: Build with Gradle
     - name: Build with Gradle
       run: ./gradlew clean build
 
-    # Step 4: Build the Docker image
+    # Step 5: Build the Docker image
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
