@@ -33,6 +33,7 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag cicdtest1/my-image-name:latest
 
+
       # Step 6: Log in to Docker Hub
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login --username "${{ secrets.DOCKER_USERNAME }}" --password-stdin
