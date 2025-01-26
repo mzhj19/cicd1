@@ -11,6 +11,6 @@ public class UserController {
 
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok("Test success");
+        return ResponseEntity.ok("Test successfully done");
     }
 }
