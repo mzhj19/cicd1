@@ -19,6 +19,7 @@ class UserControllerTest {
     public void test() throws Exception {
         mockMvc.perform(get("/user/test"))
                 .andExpect(status().isOk()) // Check if the status is 200 OK
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON)) // Check content type is JSON
                 .andExpect(content().string("Test successfully done with updated version")); // Verify response body
     }
 }
