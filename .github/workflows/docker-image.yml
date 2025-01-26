@@ -48,6 +48,7 @@ jobs:
 
       # Step 9: Increment version number
       - name: Increment version
+        if: success()
         id: increment_version
         run: |
           # Parse current version
@@ -66,6 +67,7 @@ jobs:
 
       # Step 10: Commit and push updated version.txt
       - name: Commit updated version.txt
+        if: success()
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
