@@ -1,16 +1,5 @@
-<?xml version="1.0"?>
-<ruleset name="Custom PMD Rules"
-         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
-                             http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
-
-    <description>Custom PMD Ruleset</description>
-
-    <!-- Example Rules -->
-    <rule ref="category/java/bestpractices.xml"/>
-    <rule ref="category/java/codestyle.xml"/>
-    <rule ref="category/java/errorprone.xml"/>
-    <rule ref="category/java/performance.xml"/>
-    <rule ref="category/java/security.xml"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Java Rules" xmlns="http://pmd.sourceforge.net/ruleset/2.0">
+    <description>Basic ruleset</description>
+    <rule ref="rulesets/java/quickstart.xml"/>
 </ruleset>
