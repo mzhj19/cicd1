@@ -2,7 +2,12 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.2'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.diffplug.spotless' version '6.25.0'
+    id 'checkstyle'
+    id 'pmd'
+    id 'org.sonarqube' version '4.4.1.3373'
 }
+
 
 group = 'org.mdzahidhasanjamil'
 version = '0.0.1-SNAPSHOT'
@@ -16,6 +21,32 @@ java {
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
+    }
+}
+
+checkstyle {
+    toolVersion = '10.17.0' // Latest version
+    configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "your_project_key"
+        property "sonar.organization", "your_organization"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+pmd {
+    toolVersion = '7.0.0'
+    ignoreFailures = false
+    ruleSetFiles = files("config/pmd/ruleset.xml")
+}
+
+spotless {
+    java {
+        target 'src/**/*.java'
+        googleJavaFormat()
     }
 }
 

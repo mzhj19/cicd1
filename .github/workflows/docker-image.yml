@@ -33,6 +33,23 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
+
+      - name: Run Spotless Check
+        run: ./gradlew spotlessCheck
+
+      - name: Run Checkstyle
+        run: ./gradlew checkstyleMain checkstyleTest
+
+      - name: Run PMD
+        run: ./gradlew pmdMain
+
+#      - name: Run SonarCloud Scan
+#        run: ./gradlew sonarqube
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
+
       # Step 6: Read the current version
       - name: Read version
         id: read_version
