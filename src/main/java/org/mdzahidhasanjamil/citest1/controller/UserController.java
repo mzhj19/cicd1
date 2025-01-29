@@ -11,6 +11,6 @@ public class UserController {
 
   @GetMapping("/test")
   public ResponseEntity<String> test() {
-    return ResponseEntity.ok("Test successfully done with updated version");
+    return ResponseEntity.ok("CI successfully done with updated version");
   }
 }
