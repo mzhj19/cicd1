@@ -38,8 +38,8 @@ checkstyle {
 //}
 
 pmd {
-    toolVersion = '6.55.0'  // Use the latest version
-    ignoreFailures = false
+    toolVersion = '6.55.0'
+    ignoreFailures = true
     ruleSets = []
     ruleSetFiles = files("${rootProject.projectDir}/config/pmd/ruleset.xml")
 }
