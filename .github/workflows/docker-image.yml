@@ -40,6 +40,9 @@ jobs:
       - name: Run Checkstyle
         run: ./gradlew checkstyleMain checkstyleTest
 
+      - name: Debug PMD Config
+        run: ls -R config/pmd/
+
       - name: Run PMD
         run: ./gradlew pmdMain
 
