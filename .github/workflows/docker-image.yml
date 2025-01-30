@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" , "**"]
   pull_request:
     branches: [ "main" ]
 
@@ -28,6 +28,9 @@ jobs:
       # Step 4: Build the JAR with Gradle
       - name: Build with Gradle
         run: ./gradlew clean build
+
+      - name: Run Spotless Check
+        run: ./gradlew spotlessCheck
 
       # Step 5: Run tests with Gradle
       - name: Run tests
